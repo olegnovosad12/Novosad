@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: olegnov1203/devops:compose-django
+    container_name: compose-django
+  monitoring:
+    build:
+      context: .
+      dockerfile: Dockerfile.monitoring
+    image: olegnov1203/devops:compose-monitoring
+    container_name: compose-monitoring
+    network_mode: "host"
